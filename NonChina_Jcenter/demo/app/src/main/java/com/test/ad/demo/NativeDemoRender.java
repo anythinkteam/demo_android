@@ -117,9 +117,9 @@ public class NativeDemoRender implements ATNativeAdRenderer<CustomNativeAd> {
 
         } else {
 
-            final ATNativeImageView imageView = new ATNativeImageView(mContext);
-
+            ATNativeImageView imageView = new ATNativeImageView(mContext);
             imageView.setImage(ad.getMainImageUrl());
+
             ViewGroup.LayoutParams params = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
             imageView.setLayoutParams(params);
             contentArea.addView(imageView, params);
@@ -129,7 +129,16 @@ public class NativeDemoRender implements ATNativeAdRenderer<CustomNativeAd> {
 
         titleView.setText(ad.getTitle());
         descView.setText(ad.getDescriptionText());
-        ctaView.setText(ad.getCallToActionText());
+
+        if (!TextUtils.isEmpty(ad.getCallToActionText())) {
+            ctaView.setVisibility(View.VISIBLE);
+            ctaView.setText(ad.getCallToActionText());
+            mClickView.add(ctaView);
+        } else {
+            ctaView.setVisibility(View.GONE);
+        }
+
+
         if (!TextUtils.isEmpty(ad.getAdFrom())) {
             adFromView.setText(ad.getAdFrom() != null ? ad.getAdFrom() : "");
             adFromView.setVisibility(View.VISIBLE);
@@ -139,7 +148,6 @@ public class NativeDemoRender implements ATNativeAdRenderer<CustomNativeAd> {
 
         mClickView.add(titleView);
         mClickView.add(descView);
-        mClickView.add(ctaView);
 
     }
 
