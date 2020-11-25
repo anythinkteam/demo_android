@@ -19,9 +19,6 @@ import com.facebook.ads.NativeAdListener;
 
 import java.util.List;
 
-/**
- * Created by Z on 2018/1/12.
- */
 
 public class FacebookNativeAd extends CustomNativeAd implements NativeAdListener {
     private final String TAG = FacebookNativeAd.class.getSimpleName();

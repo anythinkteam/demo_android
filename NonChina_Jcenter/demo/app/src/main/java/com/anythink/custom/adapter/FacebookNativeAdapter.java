@@ -10,9 +10,6 @@ import com.facebook.ads.NativeBannerAd;
 
 import java.util.Map;
 
-/**
- * Created by Z on 2018/1/12.
- */
 
 public class FacebookNativeAdapter extends CustomNativeAdapter {
 

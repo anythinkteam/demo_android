@@ -10,10 +10,6 @@ import com.facebook.stetho.Stetho;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Z on 2018/1/10.
- */
-
 public class DemoApplicaion extends MultiDexApplication {
     public static final String appid = "a5aa1f9deda26d";
     public static final String appKey = "4f7b9ac17decb9babec83aac078742c7";

@@ -15,9 +15,6 @@ import com.anythink.nativead.unitgroup.api.CustomNativeAd;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Z on 2018/1/18.
- */
 
 public class NativeDemoRender implements ATNativeAdRenderer<CustomNativeAd> {
 

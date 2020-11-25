@@ -12,9 +12,6 @@ import com.facebook.ads.AdView;
 
 import java.util.Map;
 
-/**
- * Created by Z on 2018/6/27.
- */
 
 public class FacebookBannerAdapter extends CustomBannerAdapter {
 

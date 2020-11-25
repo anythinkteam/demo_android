@@ -5,18 +5,13 @@ import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
 
-import com.androidquery.AQuery;
 import com.anythink.core.api.ATInitMediation;
 import com.bytedance.sdk.openadsdk.TTAdConfig;
 import com.bytedance.sdk.openadsdk.TTAdConstant;
 import com.bytedance.sdk.openadsdk.TTAdManager;
 import com.bytedance.sdk.openadsdk.TTAdSdk;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 
 public class PangleInitManager extends ATInitMediation {
