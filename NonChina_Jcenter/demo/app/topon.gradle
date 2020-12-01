@@ -30,7 +30,7 @@ repositories {
         url "https://tapjoy.bintray.com/maven"
     }
 
-    //Ironsource
+    //Ironsourcex
     maven {
         url "https://dl.bintray.com/ironsource-mobile/android-sdk"
     }
@@ -87,7 +87,6 @@ dependencies {
     api "com.anythink.sdk:adapter-facebook:5.7.5"
     api "com.facebook.android:audience-network-sdk:6.2.0"
     api "androidx.recyclerview:recyclerview:1.0.0"
-    api files('libs/biddingkit-3.0.0.aar')
 
     //Admob
     api "com.anythink.sdk:adapter-admob:5.7.5"
