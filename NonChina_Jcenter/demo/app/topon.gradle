@@ -30,7 +30,7 @@ repositories {
         url "https://tapjoy.bintray.com/maven"
     }
 
-    //Ironsourcex
+    //Ironsource
     maven {
         url "https://dl.bintray.com/ironsource-mobile/android-sdk"
     }

@@ -1,3 +1,10 @@
+<!--
+  ~ Copyright © 2018-2020 TopOn. All rights reserved.
+  ~ https://www.toponad.com
+  ~ Licensed under the TopOn SDK License Agreement
+  ~ https://github.com/toponteam/TopOn-Android-SDK/blob/master/LICENSE
+  -->
+
 <resources>
     <string name="sig_ad">广告</string>
     <string name="sig_close">跳过</string>
