@@ -81,15 +81,8 @@ public class PangleNativeAdapter extends CustomNativeAdapter {
         final int finalMediaSize = mediaSize;
         PangleInitManager.getInstance().initSDK(context, serverExtra, new PangleInitManager.InitCallback() {
             @Override
-            public void onSuccess() {
+            public void onFinish() {
                 startLoad(context, localExtra, finalRequestNum, finalMediaSize);
-            }
-
-            @Override
-            public void onError(String errorCode, String errorMsg) {
-                if (mLoadListener != null) {
-                    mLoadListener.onAdLoadError(errorCode, errorMsg);
-                }
             }
         });
     }

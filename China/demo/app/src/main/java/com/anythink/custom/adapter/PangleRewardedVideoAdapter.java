@@ -191,15 +191,8 @@ public class PangleRewardedVideoAdapter extends CustomRewardVideoAdapter {
 
         PangleInitManager.getInstance().initSDK(context, serverExtra, new PangleInitManager.InitCallback() {
             @Override
-            public void onSuccess() {
+            public void onFinish() {
                 startLoad(context, localExtra, personalized_template);
-            }
-
-            @Override
-            public void onError(String errorCode, String errorMsg) {
-                if (mLoadListener != null) {
-                    mLoadListener.onAdLoadError(errorCode, errorMsg);
-                }
             }
         });
     }

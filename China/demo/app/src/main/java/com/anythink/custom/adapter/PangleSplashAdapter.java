@@ -50,17 +50,10 @@ public class PangleSplashAdapter extends CustomSplashAdapter implements TTSplash
             personalizedTemplate = (String) serverExtra.get("personalized_template");
         }
 
-        PangleInitManager.getInstance().initSDK(context, serverExtra, new PangleInitManager.InitCallback() {
+        PangleInitManager.getInstance().initSDK(context, serverExtra, true, new PangleInitManager.InitCallback() {
             @Override
-            public void onSuccess() {
+            public void onFinish() {
                 startLoad(context, localExtra);
-            }
-
-            @Override
-            public void onError(String errorCode, String errorMsg) {
-                if (mLoadListener != null) {
-                    mLoadListener.onAdLoadError(errorCode, errorMsg);
-                }
             }
         });
     }

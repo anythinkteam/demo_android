@@ -288,11 +288,6 @@ public class PangleBannerAdapter extends CustomBannerAdapter {
         //Use the default dislike popup style in the default personalization template
         ad.setDislikeCallback(activity, new TTAdDislike.DislikeInteractionCallback() {
             @Override
-            public void onShow() {
-
-            }
-
-            @Override
             public void onSelected(int position, String value) {
                 if (mImpressionEventListener != null) {
                     mImpressionEventListener.onBannerAdClose();
@@ -353,15 +348,8 @@ public class PangleBannerAdapter extends CustomBannerAdapter {
 
         PangleInitManager.getInstance().initSDK(context, serverExtra, new PangleInitManager.InitCallback() {
             @Override
-            public void onSuccess() {
+            public void onFinish() {
                 startLoadBanner(context, serverExtra);
-            }
-
-            @Override
-            public void onError(String errorCode, String errorMsg) {
-                if (mLoadListener != null) {
-                    mLoadListener.onAdLoadError(errorCode, errorMsg);
-                }
             }
         });
     }
