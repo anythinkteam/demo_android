@@ -9,6 +9,7 @@ package com.test.ad.demo;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -25,7 +26,10 @@ import com.anythink.core.api.AdError;
 import com.anythink.network.gdt.GDTDownloadFirmInfo;
 import com.anythink.splashad.api.ATSplashAd;
 import com.anythink.splashad.api.ATSplashExListenerWithConfirmInfo;
+import com.anythink.splashad.api.IATSplashEyeAd;
 import com.test.ad.demo.gdt.DownloadApkConfirmDialogWebView;
+import com.test.ad.demo.zoomout.SplashEyeAdHolder;
+import com.test.ad.demo.zoomout.SplashZoomOutManager;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -135,8 +139,9 @@ public class SplashAdShowActivity extends Activity implements ATSplashExListener
     }
 
     @Override
-    public void onAdDismiss(ATAdInfo entity) {
+    public void onAdDismiss(ATAdInfo entity, IATSplashEyeAd splashEyeAd) {
         Log.i(TAG, "onAdDismiss:\n" + entity.toString());
+        SplashEyeAdHolder.splashEyeAd = splashEyeAd;
         jumpToMainActivity();
     }
 
@@ -145,6 +150,23 @@ public class SplashAdShowActivity extends Activity implements ATSplashExListener
     public void jumpToMainActivity() {
         if (!hasHandleJump) {
             hasHandleJump = true;
+
+            if (SplashEyeAdHolder.splashEyeAd != null) {
+                try {
+                    SplashZoomOutManager zoomOutManager = SplashZoomOutManager.getInstance(getApplicationContext());
+                    zoomOutManager.setSplashInfo(container.getChildAt(0),
+                            getWindow().getDecorView());
+                } catch (Throwable e) {
+                    Log.e(TAG, "jumpToMainActivity: ------------------------------------------ error");
+                    e.printStackTrace();
+                }
+
+                Intent intent = new Intent(this, TestMainActivity.class);
+                startActivity(intent);
+
+                overridePendingTransition(0, 0);
+            }
+
             finish();
             Toast.makeText(this, "start your MainActivity.", Toast.LENGTH_SHORT).show();
         }

@@ -22,6 +22,7 @@ import com.anythink.core.api.ATMediationRequestInfo;
 import com.anythink.core.api.AdError;
 import com.anythink.splashad.api.ATSplashAd;
 import com.anythink.splashad.api.ATSplashExListener;
+import com.anythink.splashad.api.IATSplashEyeAd;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -115,7 +116,7 @@ public class SplashAdShowActivity extends Activity implements ATSplashExListener
     }
 
     @Override
-    public void onAdDismiss(ATAdInfo entity) {
+    public void onAdDismiss(ATAdInfo entity, IATSplashEyeAd splashEyeAd) {
         Log.i(TAG, "onAdDismiss:\n" + entity.toString());
         jumpToMainActivity();
     }
