@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 
-import com.anythink.core.common.base.SDKContext;
 
 /*
  * created by timfeng 2020/11/14
