@@ -4,43 +4,35 @@
   ~ https://www.toponad.com
   ~ Licensed under the TopOn SDK License Agreement
   ~ https://github.com/toponteam/TopOn-Android-SDK/blob/master/LICENSE
-  ~
   -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffffff">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/logo_area"
+    <Spinner
+        android:id="@+id/splash_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:spinnerMode="dropdown" />
+
+    <CheckBox
+        android:id="@+id/splash_is_custom_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:padding="20dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        >
-        <ImageView
-            android:id="@+id/app_logo"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@mipmap/ic_launcher"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:textSize="18dp"
-            android:text="@string/app_name"
-            android:textColor="#000000"/>
-    </LinearLayout>
+        android:layout_below="@id/splash_spinner"
+        android:padding="2dp"
+        android:text="Custom Skip View"
+        android:checked="false"
+        android:textColor="#000000" />
 
-    <FrameLayout
-        android:id="@+id/splash_ad_container"
+    <Button
+        android:id="@+id/show_btn"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/logo_area"></FrameLayout>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/splash_is_custom_skip"
+        android:text="Show Splash Ad In Other Activity" />
+
 
 </RelativeLayout>
