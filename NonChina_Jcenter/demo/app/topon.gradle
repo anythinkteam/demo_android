@@ -221,7 +221,7 @@ dependencies {
     api "com.google.android.gms:play-services-ads-identifier:17.0.0"
 
     //Huawei
-    api "com.anythink.sdk:adapter-huawei:5.7.61"
+    api "com.anythink.sdk:adapter-huawei-nonchina:5.7.61"
     api "com.huawei.hms:ads:3.4.41.304"
 
     //Kidoz
